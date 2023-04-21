@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchat.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: josemarinho <josemarinho@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 12:57:31 by josemarinho       #+#    #+#             */
-/*   Updated: 2023/04/21 12:58:12 by josemarinho      ###   ########.fr       */
+/*   Created: 2023/04/21 19:10:23 by jose-ero          #+#    #+#             */
+/*   Updated: 2023/04/21 19:37:04 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
 }
