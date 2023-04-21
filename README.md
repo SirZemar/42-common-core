@@ -1,1 +1,1 @@
-# 42-main-core
+# 42-common-core
