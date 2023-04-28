@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 19:10:23 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/04/21 19:37:04 by jose-ero         ###   ########.fr       */
+/*   Created: 2023/04/27 15:34:03 by jose-ero          #+#    #+#             */
+/*   Updated: 2023/04/27 15:57:22 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar_fd(char c)
+int	ft_isalnum(int c)
 {
-	write(1, &c, 1);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) || (c >= 48 && c <= 57))
+		return (1);
+	return (0);
+}
+
+int	main()
+{
+	int	c = 70;
+	int	result = ft_isalnum(c);
+	printf("%d\n", result);
 }
