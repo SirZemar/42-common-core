@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 12:52:56 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/01 17:41:57 by jose-ero         ###   ########.fr       */
+/*   Created: 2023/05/02 00:09:48 by jose-ero          #+#    #+#             */
+/*   Updated: 2023/05/02 00:58:23 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-	size_t	src_len;
+	unsigned int	i;
+	unsigned char	*buffer_s1;
+	unsigned char	*buffer_s2;
 
+	buffer_s1 = (unsigned char *)s1;
+	buffer_s2 = (unsigned char *)s2;
 	i = 0;
-	src_len = ft_strlen(src);
-	if (size > 0)
+	if (n == 0)
+		return (0);
+	while (*(buffer_s1 + i) == *(buffer_s2 + i))
 	{
-		while ((src[i] != '\0') && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
+		if (i == (n - 1))
+			break ;
+		if (*(buffer_s1 + i) == '\0' || *(buffer_s2 + i) == '\0')
+			break ;
+		i++;
 	}
-	return (src_len);
+	return (*(buffer_s1 + i) - *(buffer_s2 + i));
 }

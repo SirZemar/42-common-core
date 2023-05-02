@@ -6,14 +6,16 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 19:31:19 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/04/29 11:40:08 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/01 17:11:22 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int		i;
-	char	*dest;
+	size_t		i;
+	char		*dest;
 
 	i = 0;
 	dest = s;
