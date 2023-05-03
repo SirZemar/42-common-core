@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 12:52:56 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/03 12:26:48 by jose-ero         ###   ########.fr       */
+/*   Created: 2023/05/02 11:56:39 by jose-ero          #+#    #+#             */
+/*   Updated: 2023/05/02 12:44:05 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	size_t	src_len;
+	unsigned char	*buffer_s1;
+	unsigned char	*buffer_s2;
 
-	i = 0;
-	src_len = ft_strlen(src);
-	if (size > 0)
+	buffer_s1 = (unsigned char *)s1;
+	buffer_s2 = (unsigned char *)s2;
+
+	while (n && *buffer_s1 == *buffer_s2)
 	{
-		while ((src[i] != '\0') && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		buffer_s1++;
+		buffer_s2++;
+		n--;
 	}
-	return (src_len);
+	if (n)
+		return (*buffer_s1 - *buffer_s2);
+	else
+		return (0);
 }

@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 12:52:56 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/03 12:26:48 by jose-ero         ###   ########.fr       */
+/*   Created: 2023/05/02 17:44:42 by jose-ero          #+#    #+#             */
+/*   Updated: 2023/05/02 17:44:49 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
-	size_t	src_len;
+	int				i;
+	unsigned int	result;
+	int				negative;
 
 	i = 0;
-	src_len = ft_strlen(src);
-	if (size > 0)
+	result = 0;
+	negative = 1;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		while ((src[i] != '\0') && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		if (str[i] == '-')
+			negative = -1;
+		i++;
 	}
-	return (src_len);
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	return ((int)result * negative);
 }

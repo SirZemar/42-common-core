@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 12:52:56 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/03 12:26:48 by jose-ero         ###   ########.fr       */
+/*   Created: 2023/05/02 15:34:17 by jose-ero          #+#    #+#             */
+/*   Updated: 2023/05/02 17:11:28 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	size_t	i;
-	size_t	src_len;
+	size_t	j;
 
 	i = 0;
-	src_len = ft_strlen(src);
-	if (size > 0)
+	j = 0;
+	while (haystack[i] != '\0')
 	{
-		while ((src[i] != '\0') && i < (size - 1))
+		if (i == n)
+			return (NULL);
+		while (haystack[i + j] == needle[j])
 		{
-			dest[i] = src[i];
-			i++;
+			if (needle[j + 1] == '\0')
+				return ((char *)&haystack[i]);
+			if (haystack[i + j + 1] == '\0' || i + j == n - 1)
+				return (NULL);
+			j++;
 		}
-		dest[i] = '\0';
+		j = 0;
+		i++;
 	}
-	return (src_len);
+	return (NULL);
 }

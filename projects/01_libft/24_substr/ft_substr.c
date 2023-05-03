@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/01 12:52:56 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/03 12:26:48 by jose-ero         ###   ########.fr       */
+/*   Created: 2023/05/03 09:02:07 by jose-ero          #+#    #+#             */
+/*   Updated: 2023/05/03 13:56:51 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	size_t	src_len;
+	char	*dest;
 
-	i = 0;
-	src_len = ft_strlen(src);
-	if (size > 0)
+	if (!s || !len || start > ft_strlen(s))
 	{
-		while ((src[i] != '\0') && i < (size - 1))
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
+		dest = (char *)malloc(1 * sizeof(char));
+		dest[0] = '\0';
+		return (dest);
 	}
-	return (src_len);
+	dest = (char *)malloc((len + 1) * sizeof(char));
+	if (dest)
+	{
+
+		ft_strlcpy(dest, &s[start], len + 1);
+		return (dest);
+	}
+	else
+		return (NULL);
 }
