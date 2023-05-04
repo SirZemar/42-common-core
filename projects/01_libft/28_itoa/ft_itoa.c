@@ -6,12 +6,11 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 16:09:25 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/04 16:29:50 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:13:03 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	get_digit_len(int n)
 {
@@ -57,12 +56,4 @@ char	*ft_itoa(int n)
 		n_len--;
 	}
 	return (res);
-}
-
-int main(void)
-{
-    int i;
-
-    i = -2313220;
-    printf("Itoa %s\n",ft_itoa(i));
 }
