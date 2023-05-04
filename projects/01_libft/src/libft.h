@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/01 17:04:33 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/04 11:28:26 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:08:45 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void    ft_striteri(char *s, void (*f)(unsigned int,char*));
 
 #endif
