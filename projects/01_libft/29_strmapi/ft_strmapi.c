@@ -1,0 +1,51 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/04 16:35:42 by jose-ero          #+#    #+#             */
+/*   Updated: 2023/05/04 17:02:25 by jose-ero         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+#include <stdio.h>
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char	*res;
+	int		i;
+
+	if (!s || !f)
+		return (NULL);
+	res = malloc((ft_strlen((char *)s) + 1) * sizeof(char));
+	if (res == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i] != '\0')
+	{
+		res[i] = f(i, s[i]);
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
+}
+
+char    ft_char_add_one(unsigned int i, char c)
+{
+    c = c + i;
+    printf("Index: %i\n", i);
+    return (c);
+}
+
+int main(void)
+{
+ char *s = "Hello, world!";
+    char *res = ft_strmapi(s, ft_char_add_one);
+    printf("Input string: %s\n", s);
+    printf("Result string: %s\n", res);
+    free(res); // Remember to free the memory allocated by ft_strmapi
+    return (0);
+}
