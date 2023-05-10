@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 16:42:08 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/01 17:10:15 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:57:22 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char	*ptr_last_dest;
 	char	*ptr_last_src;
 
-	if (!src || !dest)
+	if (!src && !dest)
 		return ((void *)dest);
 	ptr_dest = (char *)dest;
 	ptr_src = (char *)src;

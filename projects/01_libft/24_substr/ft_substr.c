@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 09:02:07 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/03 13:56:51 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:36:16 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	dest = (char *)malloc((len + 1) * sizeof(char));
 	if (dest)
 	{
-
 		ft_strlcpy(dest, &s[start], len + 1);
 		return (dest);
 	}

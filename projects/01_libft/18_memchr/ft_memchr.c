@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 11:21:15 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/02 11:46:14 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/10 18:08:15 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	buffer_s = (unsigned char *)s;
 	buffer_c = (unsigned char)c;
-	while (*buffer_s != buffer_c && i < n)
+	while (i < n && *buffer_s != buffer_c)
 	{
 		buffer_s++;
 		i++;

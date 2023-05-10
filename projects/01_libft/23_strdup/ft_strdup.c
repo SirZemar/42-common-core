@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 18:49:25 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/02 19:01:18 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/09 20:02:01 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s);
 	dup = (char *)malloc((len + 1) * sizeof(char));
-
 	if (dup)
 	{
 		ft_strlcpy(dup, s, len + 1);

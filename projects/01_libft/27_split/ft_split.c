@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 23:22:07 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/04 13:55:07 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:37:25 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,69 +15,69 @@
 unsigned int		count_words(char const *s, char c);
 void				create_word(char const *s, char c, char **dest);
 
-char	**ft_split(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
-	unsigned int	words;
-	char			**dest;
-
-	words = count_words(s, c);
-	if (s[0] == '\0' || words == 0)
-	{
-		dest = (char **)malloc(sizeof(char *) + 1);
-		dest[0] = NULL;
-		return (dest);
-	}
-	dest = (char **)malloc((words + 1) * sizeof(char *));
-	create_word(s, c, dest);
-	if (dest == NULL)
-	{
-		free(dest);
-		return (NULL);
-	}
-	return (dest);
-}
-
-unsigned int	count_words(char const *s, char c)
-{
-	unsigned int	i;
+	size_t			i;
 	unsigned int	counted;
 
+	if (!s)
+		return (0);
 	i = 0;
 	counted = 0;
 	while (*s)
 	{
-		if (*s == c)
-			counted = 0;
 		if (*s != c && !counted)
 		{
 			i++;
 			counted = 1;
 		}
+		if (*s == c)
+			counted = 0;
 		s++;
 	}
 	return (i);
 }
 
-void	create_word(char const *s, char c, char **dest)
+static char	*get_word(const char *s, int start, int end)
 {
-	unsigned int	end;
-	unsigned int	start;
+	int		i;
+	char	*word;
 
-	start = 0;
-	end = 0;
-	while (s[start] != '\0')
+	i = 0;
+	word = (char *)malloc((end - start + 1) * sizeof(char));
+	if (!word)
+		return (0);
+	while (start < end)
+		word[i++] = s[start++];
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	i2;
+	int		i3;
+	char	**tab;
+
+	if (!s)
+		return (0);
+	i = -1;
+	i2 = 0;
+	i3 = -1;
+	tab = (char **)malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!tab)
+		return (0);
+	while (++i <= ft_strlen(s))
 	{
-		if (s[start] == c)
-			start++;
-		if (s[start] != c && s[start] != '\0')
+		if (s[i] != c && i3 < 0)
+			i3 = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && i3 >= 0)
 		{
-			end = start;
-			while (s[end] != c && s[end] != '\0')
-				end++;
-			*dest = ft_substr(s, start, end - start);
-			start = end + 1;
-			dest++;
+			tab[i2++] = get_word(s, i3, i);
+			i3 = -1;
 		}
 	}
-	*dest = 0;
+	tab[i2] = 0;
+	return (tab);
 }
