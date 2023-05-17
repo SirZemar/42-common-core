@@ -18,4 +18,7 @@
     "titleBar.inactiveBackground": "#1e354599",
     "titleBar.inactiveForeground": "#c7d5e099"
   },
+  "[c]": {
+    "editor.tabSize": 4,
+  }
 }
