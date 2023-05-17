@@ -2,3 +2,7 @@ projects/01_libft/src/*.c
 projects/01_libft/src/*.a
 projects/01_libft/src/*.o
 projects/01_libft/src/*.out
+
+projects/02_printf/*.out
+projects/02_printf/*.o
+projects/02_printf/*.a
