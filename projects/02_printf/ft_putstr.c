@@ -6,21 +6,21 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:41:54 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/17 12:50:04 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:47:16 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t  ft_putstr(char *str)
+size_t	ft_putstr(char *str)
 {
-  size_t  i;
+	size_t	i;
 
-  i = 0;
-  while (str[i] != '\0')
-  {
-    ft_putchar(str[i]);
-    i++;
-  }
-  return (i);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
 }
