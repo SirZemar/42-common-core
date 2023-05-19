@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 11:40:01 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/19 11:12:54 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/19 18:43:35 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,36 @@ size_t	ft_putptr(void *ptr)
 	unsigned long long	p;
 	size_t				len;
 
+	if (!ptr)
+	{
+		len = ft_putstr("(nil)");
+		return (len);
+	}
 	p = (unsigned long long)ptr;
-	len = ft_ptrlen(p) + 2;
-	ft_putstr("0x");
+	len = ft_ptrlen(p);
+	len += ft_putstr("0x");
 	ft_printptr(p);
 	return (len);
 }
+
+// int	main(void)
+// {
+// 	size_t	len1;
+// 	size_t	len2;
+//
+// 	len1 = 0;
+// 	len2 = 0;
+// 	// char	*a = "HELLO";
+// 	// char *a = '\0';
+// 	// void	*a = (void *)9223372036854775807;
+// 	// void	*a = (void *)'Z';
+// 	// void	*a = (void *)4294967295;
+// 	void		*a = '\0';
+//
+// 	len1 = printf("xxxprintf: %p\n", a);
+// 	len2 = ft_printf("ft_printf: %p\n", a);
+// 	ft_printf("ft_len: %d\n", len1);
+// 	ft_printf("len: %d\n", len2);
+//
+// 	return (0);
+// }

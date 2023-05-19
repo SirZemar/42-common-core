@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 17:13:42 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/19 11:12:51 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/19 16:00:58 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,23 @@ size_t	ft_putnbr(int i)
 		ft_putchar('8');
 	return (len);
 }
+
+// int	main(void)
+// {
+// 	size_t	len1;
+// 	size_t	len2;
+//
+// 	// int	i = -2147483648;
+// 	// int	i = 2147483648;
+// 	int	i = 4294967295;
+// 	// int	i = 'Z';
+// 	// int	i = 0;
+// 	// int		i = '\0';
+//
+// 	len1 = printf("xxxprintf: %d\n", i);
+// 	len2 = ft_printf("ft_printf: %d\n", i);
+// 	ft_printf("ft_len: %d\n", len1);
+// 	ft_printf("len: %d\n", len2);
+//
+// 	return (0);
+// }

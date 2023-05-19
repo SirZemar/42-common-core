@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 09:38:07 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/19 12:49:56 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/19 23:28:07 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_hexprint(unsigned int i, char format)
 	}
 }
 
-size_t	ft_puthex(unsigned int i, char format)
+size_t	ft_puthex(unsigned int i, const char format)
 {
 	size_t	len;
 
@@ -57,18 +57,18 @@ size_t	ft_puthex(unsigned int i, char format)
 // {
 // 	size_t len1;
 // 	size_t len2;
-
+//
 // 	// unsigned int i = 10;
 // 	// unsigned int i = 4294967295;
 // 	// unsigned int i = 2147483647;
 // 	// unsigned int i = -2147483648;
 // 	// unsigned int i = -7483648;
 // 	unsigned int i = '\0';
-
+//
 // 	len1 = printf("xxxprintf: %X\n", i);
 // 	len2 = ft_printf("ft_printf: %X\n", i);
 // 	ft_printf("ft_len: %d", len1);
 // 	ft_printf("len: %d", len2);
-
+//
 // 	return (0);
-// } 
+// }

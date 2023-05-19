@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 12:41:54 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/17 17:47:16 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/19 23:34:47 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,37 @@
 
 size_t	ft_putstr(char *str)
 {
-	size_t	i;
+	size_t	len;
 
-	i = 0;
-	while (str[i] != '\0')
+	len = 0;
+	if (!str)
 	{
-		ft_putchar(str[i]);
-		i++;
+		len = ft_putstr("(null)");
+		return (len);
 	}
-	return (i);
+	while (str[len] != '\0')
+		len += ft_putchar(str[len]);
+	return (len);
 }
+
+// int	main(void)
+// {
+// 	size_t	len1;
+// 	size_t	len2;
+//
+// 	len1 = 0;
+// 	len2 = 0;
+// 	// char	*c = "Lorem, imaginarium qantus merillion";
+// 	// char	*c = "A";
+// 	// char	*c = 0;
+// 	char	*c = "\n";
+//  	// char	*c = '\0';
+// 	// char		*c = NULL;
+//
+// 	len1 = printf("xxxprintf: %s\n", c);
+// 	len2 = ft_printf("ft_printf: %s\n", c);
+// 	ft_printf("ft_len: %d\n", len1);
+// 	ft_printf("len: %d\n", len2);
+//
+// 	return (0);
+// }

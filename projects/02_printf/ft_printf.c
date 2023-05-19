@@ -6,14 +6,13 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:23:09 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/19 12:48:43 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/19 23:34:31 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-size_t	ft_printf_format(va_list args, char format)
+size_t	ft_printf_format(va_list args, const char format)
 {
 	size_t	len;
 
@@ -29,8 +28,9 @@ size_t	ft_printf_format(va_list args, char format)
 	else if (format == 'u')
 		len = ft_putunsigned(va_arg(args, unsigned int));
 	else if (format == 'x' || format == 'X')
-		len = ft_puthex(va_arg(args, int), format);
-	write(1, "\n", 2);
+		len = ft_puthex(va_arg(args, unsigned int), format);
+	else if (format == '%')
+		len = ft_putchar(format);
 	return (len);
 }
 
@@ -53,24 +53,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return ((int) len);
-}
-
-int	main(void)
-{
-	size_t len1;
-	size_t len2;
-
-	// unsigned int i = 10;
-	// unsigned int i = 4294967295;
-	// unsigned int i = 2147483647;
-	// unsigned int i = -2147483648;
-	// unsigned int i = -7483648;
-	unsigned int i = '\0';
-
-	len1 = printf("xxxprintf: %X\n", i);
-	len2 = ft_printf("ft_printf: %X\n", i);
-	ft_printf("ft_len: %d", len1);
-	ft_printf("len: %d", len2);
-
-	return (0);
 }
