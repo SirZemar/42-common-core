@@ -3,7 +3,9 @@ NAME =	libftprintf.a
 SRCS =	ft_printf.c\
 				ft_putchar.c\
 				ft_putstr.c\
-				ft_putptr.c
+				ft_putptr.c\
+				ft_putnbr.c\
+				ft_putunsigned.c
 
 OBJS =	$(SRCS:.c=.o)
 

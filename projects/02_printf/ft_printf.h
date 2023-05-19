@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 12:38:25 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/17 18:09:39 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:12:46 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int		ft_printf(const char *str, ...);
 size_t	ft_putchar(char c);
 size_t	ft_putstr(char *str);
 size_t	ft_putptr(void *ptr);
+size_t	ft_putnbr(int i);
+size_t	ft_putunsigned(unsigned int i);
 
 #endif

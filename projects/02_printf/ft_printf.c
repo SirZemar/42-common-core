@@ -6,7 +6,7 @@
 /*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 18:23:09 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/05/18 14:28:10 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/05/19 11:12:39 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ size_t	ft_printf_format(va_list args, char format)
 		len = ft_putstr(va_arg(args, char *));
 	else if (format == 'p')
 		len = ft_putptr(va_arg(args, void *));
+	else if (format == 'i' || format == 'd')
+		len = ft_putnbr(va_arg(args, int));
+	else if (format == 'u')
+		len = ft_putunsigned(va_arg(args, unsigned int));
 	write(1, "\n", 2);
 	return (len);
 }
@@ -47,15 +51,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return ((int) len);
-}
-
-int	main(void)
-{
-	int	i;
-
-	i = (int) ft_printf("Hello %p", NULL);
-	printf("Len %i\n", i);
-	printf("Hello %p", NULL);
-	printf("\n");
-	return (0);
 }
