@@ -20,5 +20,11 @@
   },
   "[c]": {
     "editor.tabSize": 4,
-  }
+},
+"files.associations": {
+	"array": "c",
+	"string_view": "c",
+	"initializer_list": "c",
+	"utility": "c"
+}
 }
