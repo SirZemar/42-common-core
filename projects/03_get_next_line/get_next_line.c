@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jose-ero <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jose-ero <jose-ero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 18:37:57 by jose-ero          #+#    #+#             */
-/*   Updated: 2023/06/13 22:45:13 by jose-ero         ###   ########.fr       */
+/*   Updated: 2023/11/01 18:13:15 by jose-ero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "fcntl.h"
 
 static char	*read_file(int fd, char *str);
 static char	*get_line(char *str);
@@ -107,18 +106,20 @@ static char	*next_read_line(char *str)
 	return (next_line);
 }
 
-/* int	main(void)
-{
-	int		fd;
-	char	*line;
+// // TODO Remove function
+// #include "fcntl.h"
+// #include "stdio.h"
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*line;
 
-	fd = open("./long_line.txt", O_RDONLY);
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (line == NULL)
-			break ;
-		printf("%s", line);
-	}
-	return (0);
-} */
+// 	fd = open("./1char.txt", O_RDONLY);
+// 	while (1)
+// 	{
+// 		line = get_next_line(fd);
+// 		printf("%s", line);
+// 		if (line == NULL)
+// 			break ;
+// 	}
+// }
